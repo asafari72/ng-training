@@ -1,0 +1,16 @@
+<div class="content">
+    <div class="container">
+        <div class="col-md-4 offset-md-4">
+            <div class="card shadow-sm border-0 rounded-0">
+                <h2 class="text-center white">Login</h2>
+                <div class="card-body">
+                    <tr-input type="text" (keypress)="handleUsername($event)" placeholder="نام کاربری" label="نام کاربری"></tr-input>
+                    <tr-input type="password" (keypress)="handlePassword($event)" placeholder="رمز عبور" label="رمز عبور"></tr-input>
+                </div>
+                <div class="card-footer">
+                    <tr-button text="ورود" color="primary" [flat]="true" [hover]="true" (click)="handleClickButton()"></tr-button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

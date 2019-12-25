@@ -1,0 +1,15 @@
+.content{
+    background: linear-gradient(to right bottom, #1cc7d0 ,#013ca6, #013ca6,#1cc7d0);
+    height: calc(100vh);
+    align-items: center;
+    display: flex;
+    font-family: sans-serif;
+    h2{
+        color: #fff;
+        font-family: sans-serif;
+    }
+}
+.card{
+    background: rgba(0, 0, 0, 0.22);
+    padding: 10px;
+}
