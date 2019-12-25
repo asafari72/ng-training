@@ -1,12 +1,37 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output, Input } from '@angular/core';
 
 @Component({
     selector: 'tr-input',
     templateUrl: './input.component.html',
     styleUrls: ['./input.component.scss']
 })
-export class TRInputComponent implements OnInit {
-    constructor() { }
+export class TRInputComponent{
 
-    ngOnInit(): void { }
+
+    @Input()
+    label: string = "Label"
+
+    @Input()
+    placeholder: string = "placeholder"
+
+    @Output() 
+    textChange: EventEmitter<any> = new EventEmitter();
+
+    @Output() 
+    focus: EventEmitter<any> = new EventEmitter();
+    
+    @Output() 
+    blur: EventEmitter<any> = new EventEmitter();
+
+    handleInputChange(e) {
+        this.textChange.emit(e.target.value)
+    }
+
+    handleFocus(){
+        this.focus.emit()
+    }
+
+    handleBlur(){
+        this.blur.emit()
+    }
 }

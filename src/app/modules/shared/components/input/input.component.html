@@ -1,0 +1,10 @@
+<div class="form-group">
+    <label>{{label}}</label>
+    <input 
+    class="form-control" 
+    placeholder={{placeholder}}
+    (keypress)="handleInputChange($event)" 
+    (blur)="handleBlur($event)"
+    (focus)="handleFocus($event)"
+     />
+</div>
