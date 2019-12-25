@@ -14,12 +14,16 @@ export class TRInputComponent{
     @Input()
     placeholder: string = "placeholder"
 
+    @Input()
+    type: "text" | "password" | "color" | "email" = "text"
+
+
     @Output() 
     textChange: EventEmitter<any> = new EventEmitter();
 
     @Output() 
     focus: EventEmitter<any> = new EventEmitter();
-    
+
     @Output() 
     blur: EventEmitter<any> = new EventEmitter();
 
