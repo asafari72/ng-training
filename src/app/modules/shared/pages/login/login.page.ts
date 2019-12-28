@@ -1,26 +1,33 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/auth.service';
+
+
 
 @Component({
     selector: 'tr-login',
     templateUrl: './login.page.html',
     styleUrls: ['./login.page.scss']
 })
-export class LoginPage implements OnInit {
-    ngOnInit(): void { }
-    
-    username:string;
-    password:string;
+export class LoginPage {
 
-    handleClickButton(e){
-        alert("username is a :"+this.username+"");
-        alert("password is a :"+this.password+"");
+    user = {
+        username: '',
+        password: ''
     }
 
-    handleUsername(e){
-        this.username=e.target.value;
+    constructor(private auth: AuthService, private router: Router) { }
+
+    onSignin(e) {
+        this.auth.checkUser(this.user);
+        this.router.navigate(['main']);
     }
 
-    handlePassword(e){
-        this.password=e.target.value;
+    handleUsername({ target: { value } }) {
+        this.user.username = value;
+    }
+
+    handlePassword({ target: { value } }) {
+        this.user.password = value;
     }
 }
